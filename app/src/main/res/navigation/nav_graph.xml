@@ -7,33 +7,26 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        tools:layout="@layout/fragment_home"
-        android:name="tech.jhavidit.indmoney_assignment.view.HomeFragment"
-        android:label="HomeFragment">
+        android:name="com.monika.productlist.view.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/openDetails"
-            app:destination="@id/userDetailFragment">
+            app:destination="@id/detailsFragment">
 
-            <argument
-                android:name="userDetails"
-                app:argType="tech.jhavidit.indmoney_assignment.model.UserResponse" />
-
-
+            <argument android:name="userDetails" />
         </action>
-
 
     </fragment>
 
     <fragment
-        android:id="@+id/userDetailFragment"
-        android:name="tech.jhavidit.indmoney_assignment.view.UserDetailsFragment"
-        android:label="UserDetailFragment"
-        tools:layout="@layout/fragment_user_details" >
+        android:id="@+id/detailsFragment"
+        android:name="com.monika.productlist.view.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details">
 
-        <argument
-            android:name="userDetails"
-            app:argType="tech.jhavidit.indmoney_assignment.model.UserResponse" />
+        <argument android:name="userDetails" />
 
     </fragment>
 
