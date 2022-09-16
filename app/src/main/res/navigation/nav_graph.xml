@@ -3,31 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/productFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.monika.productlist.view.HomeFragment"
-        android:label="HomeFragment"
-        tools:layout="@layout/fragment_home">
+        android:id="@+id/productFragment"
+        android:name="com.monika.productlist.presentation.ui.productlist.ProductsFragment"
+        android:label="ProductsFragment"
+        tools:layout="@layout/fragment_products">
 
         <action
             android:id="@+id/openDetails"
-            app:destination="@id/detailsFragment">
+            app:destination="@id/productDetailsFragment">
 
-            <argument android:name="userDetails" />
+            <argument
+                android:name="productDetails"
+                app:argType="com.monika.productlist.data.model.ProductResponse" />
         </action>
-
     </fragment>
 
     <fragment
-        android:id="@+id/detailsFragment"
-        android:name="com.monika.productlist.view.DetailsFragment"
-        android:label="DetailsFragment"
-        tools:layout="@layout/fragment_details">
+        android:id="@+id/productDetailsFragment"
+        android:name="com.monika.productlist.presentation.ui.product.DetailsFragment"
+        android:label="productDetailsFragment"
+        tools:layout="@layout/fragment_product_details">
 
-        <argument android:name="userDetails" />
-
+        <argument
+            android:name="productDetails"
+            app:argType="com.monika.productlist.data.model.ProductResponse" />
     </fragment>
 
 </navigation>

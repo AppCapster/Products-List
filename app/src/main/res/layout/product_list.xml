@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/productCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/start_margin_small"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingStart="@dimen/start_margin"
+            android:paddingTop="@dimen/top_margin_small"
+            android:paddingEnd="@dimen/end_margin"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/bottom_margin_small">
+
+            <ImageView
+                android:id="@+id/productImage"
+                android:layout_width="@dimen/portrait_image_width_small"
+                android:layout_height="@dimen/portrait_image_height_small"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/ic_launcher_foreground" />
+
+            <LinearLayout
+                android:id="@+id/layoutContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/start_margin"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/productImage"
+                app:layout_constraintLeft_toRightOf="@+id/productImage"
+                app:layout_constraintTop_toTopOf="@id/productImage">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:textSize="@dimen/title_text_size_small"
+                    android:textStyle="bold"
+                    tools:text="Title" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="sans-serif-light"
+                    tools:text="price" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="sans-serif-light"
+                    tools:text="description" />
+
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    tools:text="category" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
