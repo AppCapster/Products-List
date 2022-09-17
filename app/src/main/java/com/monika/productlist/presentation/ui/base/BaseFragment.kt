@@ -13,11 +13,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
-import com.monika.productlist.R
 import kotlinx.coroutines.launch
 import kotlin.reflect.KSuspendFunction0
 
-abstract class BaseFragment<B : ViewDataBinding>(@LayoutRes private val layoutId: Int) : Fragment() {
+abstract class BaseFragment<B : ViewDataBinding>(@LayoutRes private val layoutId: Int) :
+    Fragment() {
 
     private var _binding: B? = null
     protected val binding get() = _binding!!
@@ -28,8 +28,13 @@ abstract class BaseFragment<B : ViewDataBinding>(@LayoutRes private val layoutId
 
     private var snackbar: Snackbar? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = DataBindingUtil.inflate<B>(inflater, layoutId, container, false).apply { defineBindingVariables?.invoke(this) }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = DataBindingUtil.inflate<B>(inflater, layoutId, container, false)
+            .apply { defineBindingVariables?.invoke(this) }
         return binding.root
     }
 

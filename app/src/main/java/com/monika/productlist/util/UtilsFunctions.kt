@@ -12,7 +12,7 @@ fun View.gone() {
     this.visibility = View.GONE
 }
 
-fun showToast(message:String,context:Context){
-    Toast.makeText(context,message,Toast.LENGTH_SHORT).show()
+fun showToast(message: String, context: Context) {
+    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
 }
 

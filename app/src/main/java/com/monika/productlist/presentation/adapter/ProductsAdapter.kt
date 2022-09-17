@@ -54,7 +54,8 @@ class ProductsAdapter :
         with(holder) {
             with(userList[position]) {
                 binding.title.text = this.title
-                binding.price.text = this.price.toString()
+                val price = "₹ ${this.price}/-"
+                binding.price.text = price
                 binding.description.text = this.description
                 binding.category.text = this.category
                 Glide.with(holder.itemView.context)

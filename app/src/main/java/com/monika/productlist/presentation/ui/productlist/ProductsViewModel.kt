@@ -31,7 +31,7 @@ class ProductsViewModel @Inject constructor(
             productResponse.value = (Resource.loading(null))
             supervisorScope {
                 val userResponseAsync =
-                    async {  productApiRepository.getProducts() }
+                    async { productApiRepository.getProducts() }
                 try {
                     productResponse.value = (Resource.success(userResponseAsync.await()))
                 } catch (e: Exception) {
